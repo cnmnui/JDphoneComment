@@ -1,15 +1,12 @@
 import time
 from selenium import webdriver
 import csv
-from fake_useragent import UserAgent
 from lxml import etree
 
 
 class JDSpider:
     def __init__(self):
         self.base_url = 'https://www.jd.com'
-        ua = UserAgent()
-        self.headers = {'UserAgent': ua.random}
         self.opt = webdriver.ChromeOptions()
         self.opt.set_headless()
         self.driver = webdriver.Chrome(options=self.opt)

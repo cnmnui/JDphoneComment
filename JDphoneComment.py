@@ -31,6 +31,7 @@ class JDSpider:
     # 评论下一页
     def comment_next_click(self):
         if self.driver_comment.page_source.find('ui-pager-next') != -1:
+            # 可能是这边网速的问题，这里老是提示无法点击
             self.driver_comment.find_element_by_class_name('ui-pager-next').click()
             time.sleep(1)
             res = self.driver.page_source
